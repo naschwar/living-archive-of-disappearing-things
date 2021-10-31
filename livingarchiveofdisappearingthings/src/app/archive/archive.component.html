@@ -1,0 +1,17 @@
+<div *ngFor="let entry of entries; let i = index;">
+    <div class="grid-container" [ngClass] = "{'expanded': expandedIndex == i}">
+        <div class="d-flex flex-row">
+            <div class="col-md-2 align-self-center">
+                <h2 class="name">{{entry.name}}</h2>
+            </div>
+            <div class="col-md-7 align-self-center">
+                <div class="grid-text">{{expandedIndex == i ? entry.longDesc : entry.shortDesc}}</div>
+            </div>
+            <div class="col-md-3 align-self-center justify-self-center">
+                <img class="grid-image img-responsive" src="{{entry.imgSrc}}" alt="NASA space capture of maldives islands">
+            </div>
+        </div>
+        <button class="readmore-button" (click)="readMore(i)">{{expandedIndex == i ? 'Read Less' : 'Read More'}}</button>
+
+    </div>
+</div>

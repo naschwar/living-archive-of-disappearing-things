@@ -1,0 +1,70 @@
+
+.grid-container{
+    position: relative;
+    margin: 3% 8% 6% 8%;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.grid-container:hover{
+    background: rgba(123, 139, 153, 0.75);
+}
+
+.flex-row{
+    height: fit-content;
+    padding: 0;
+    display: flex;
+    padding: 2% 0% 0% 0%;
+}
+
+.readmore-button{
+    display: inline-block;
+    clear: both;
+    position: relative;
+    margin: 1%;
+    border: 1.5px solid rgba(142, 160, 168, 0.726);
+    border-radius: 8px;
+    font-weight: bold;
+    left: 40%;
+    padding: .5% .75%;
+    background: url("/assets/sky_bg.webp");
+    opacity: 0.7;
+}
+
+.grid-image{
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.grid-text{
+    margin-left: 2.5%;
+    margin-top: 5%;
+    float: left;
+    line-height: 120%;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.current{
+    display: block;
+}
+
+.expanded{
+    background: rgba(123, 139, 153, 0.75);
+}
+
+.name{
+    color: #0310bd;
+}
+
+.readmore-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+.readmore-button:hover{
+    opacity: 1.0
+} 
