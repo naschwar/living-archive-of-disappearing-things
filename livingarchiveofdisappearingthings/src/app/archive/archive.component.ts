@@ -10,13 +10,29 @@ import { entries } from '../entry/entry.component';
 })
 export class ArchiveComponent implements OnInit {
   entries = entries;
+  hoverIndex = -1;
   expandedIndex = -1;
-
   ngOnInit(): void {
   }
 
   readMore = (index: number) => {
-    if (this.expandedIndex == index){
+    if (this.hoverIndex == index){
+      this.hoverIndex = -1;
+    }else{
+      this.hoverIndex = index;
+    }
+  }
+
+  hover = (index: number) => {
+    this.hoverIndex = index;
+  }
+
+  leave = () => {
+    this.hoverIndex = -1;
+  }
+
+  expand = (index: number) => {
+    if(this.expandedIndex == index){
       this.expandedIndex = -1;
     }else{
       this.expandedIndex = index;

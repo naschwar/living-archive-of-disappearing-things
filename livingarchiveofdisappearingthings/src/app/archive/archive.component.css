@@ -1,70 +1,95 @@
 
 .grid-container{
-    position: relative;
-    margin: 3% 8% 6% 8%;
-    background: rgba(255, 255, 255, .3);
+    margin: 3% 8% 4% 8%;
     border-radius: 20px;
-    height: fit-content;
 }
-
-.grid-container:hover{
-    background: rgba(123, 139, 153, 0.75);
-}
-
-.flex-row{
-    height: fit-content;
-    padding: 0;
+.container{
+    margin: 3% 15%;
+    width: 70%;
     display: flex;
-    padding: 2% 0% 0% 0%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.readmore-button{
-    display: inline-block;
-    clear: both;
+ .mini{ 
     position: relative;
-    margin: 1%;
-    border: 1.5px solid rgba(142, 160, 168, 0.726);
-    border-radius: 8px;
-    font-weight: bold;
-    left: 40%;
-    padding: .5% .75%;
-    background: url("/assets/sky_bg.webp");
-    opacity: 0.7;
-}
+    align-self: center;
+    max-width: 15vw;
+    height: 40%;
+    padding: 2%;
+    flex: 20%;
 
-.grid-image{
-    width: 90%;
-    height: auto;
+}
+ .grid-media{    
+    display: inline-block;
+    margin: 5%;
+    width: 100%;
+    max-width: 15vw;
+    max-height: 60vh;
     overflow: hidden;
     border-radius: 20px;
+    justify-self: center;
+
+ }
+
+ button{
+    padding: 0;
+    border: none;
+    background: none;
+ }
+
+ .sectionTitle{
+     color: rgb(25, 25, 114);
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 1.6rem;
+     text-align: center;
+     padding: .5rem;
+     border-radius: .2rem;
+     background-color: rgba(189, 227, 247, 0.4);
+     box-shadow: 0px 0px 40px 20px rgba(189, 227, 247, 0.5);
+ }
+
+ .sectionContainer{
+     width: 100%;
+     background-color: black;
+ }
+ .expanded{
+    position: relative;
+    align-self: center;
+    height: 40%;
+    padding: 2%;
+    flex: 20%;
+    max-width: 100%;
+    flex: 100%;
 }
 
-.grid-text{
-    margin-left: 2.5%;
-    margin-top: 5%;
-    float: left;
-    line-height: 120%;
-    font-size: 18px;
-    font-weight: 900;
+.expandedSection{
+    background-color: rgba(56, 101, 143, 0.88);
+    padding: 2%;
+    margin: 3%;
+    border-radius: 10px;
+    border: 50px;
+    position: relative;
+    flex: 100%;
+    width: 100%;
+    flex-basis: 100%;
+    color: rgb(196, 185, 166);
+    white-space: pre-wrap;
 }
 
-.current{
-    display: block;
+.shortDesc{
+    color: rgb(25, 25, 114);
+    font-size: 1.2em;
 }
 
-.expanded{
-    background: rgba(123, 139, 153, 0.75);
+.expandedSection p{
+    padding: 0 4%;
 }
 
-.name{
-    color: #0310bd;
+.expandedSection:hover{
+    cursor: pointer;
 }
-
-.readmore-button:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
-.readmore-button:hover{
-    opacity: 1.0
-} 

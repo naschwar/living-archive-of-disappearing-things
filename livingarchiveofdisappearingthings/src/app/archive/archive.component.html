@@ -1,17 +1,19 @@
-<div *ngFor="let entry of entries; let i = index;">
-    <div class="grid-container" [ngClass] = "{'expanded': expandedIndex == i}">
-        <div class="d-flex flex-row">
-            <div class="col-md-2 align-self-center">
-                <h2 class="name">{{entry.name}}</h2>
-            </div>
-            <div class="col-md-7 align-self-center">
-                <div class="grid-text">{{expandedIndex == i ? entry.longDesc : entry.shortDesc}}</div>
-            </div>
-            <div class="col-md-3 align-self-center justify-self-center">
-                <img class="grid-image img-responsive" src="{{entry.imgSrc}}" alt="NASA space capture of maldives islands">
-            </div>
+<div class = "archive">  
+    <div class="container">
+        <div *ngFor="let entry of entries; let i = index;" [ngClass]="(this.expandedIndex == i) ? 'expanded': 'mini'"  (mouseenter) ="hover(i)" (mouseleave) ="leave()" (click)="expand(i)">     
+            <button> 
+                <img class="grid-media img-responsive" [src]="entry.source" [hidden]="this.expandedIndex == i" alt=""/>
+                <h2 class = "sectionTitle" [hidden]="(this.hoverIndex != i) || (this.expandedIndex == i)" >{{entry.name}}</h2> 
+            </button>
+            <div *ngIf="this.expandedIndex == i; then showExpanded"></div>
+            <ng-template #showExpanded>
+                <div class="expandedSection">
+                    <h2>{{entry.name}}</h2>
+                    <p class="shortDesc">{{entry.shortDesc}}</p>
+                    <p>{{entry.longDesc}}</p>
+                </div>
+            </ng-template>
         </div>
-        <button class="readmore-button" (click)="readMore(i)">{{expandedIndex == i ? 'Read Less' : 'Read More'}}</button>
 
     </div>
 </div>
