@@ -1,8 +1,32 @@
 <header id="siteHeading">
-    <div class="title-container">
-        <h1 class="title">Living Archive of Disappearing Things</h1>
+    <div class = "title side-panel" [ngStyle]="{'color': this.expandedView != true ? 'rgb(57, 55, 73)' : 'rgb(226, 217, 217)'}">
+        <div class="word">
+            <div *ngFor="let letter of ['L','i','v','i','n','g']; let i = index;">
+                <span [ngStyle]="{'animation': this.expandedView == true ? 'fade 40s ease-in-out infinite' : '', 'animation-delay': this.expandedView == true ? i+'s' : ''}">{{letter}}</span>
+            </div>
+        </div>
+        <div class="word">
+            <div *ngFor="let letter of ['A', 'r','c', 'h', 'i', 'v','e']; let i = index;">
+                <span [ngStyle]="{'animation': this.expandedView == true ? 'fade 40s ease-in-out infinite' : '', 'animation-delay': this.expandedView == true ? i+6+'s' : ''}">{{letter}}</span>
+            </div>
+        </div>
+        <div class="word">
+            <div *ngFor="let letter of ['o', 'f']; let i = index;">
+                <span [ngStyle]="{'animation': this.expandedView == true ? 'fade 40s ease-in-out infinite' : '', 'animation-delay': this.expandedView == true ? i+13+'s' : ''}">{{letter}}</span>
+            </div>
+        </div>
+        <div class="word">
+            <div *ngFor="let letter of ['D', 'i', 's', 's', 'a', 'p', 'p', 'e', 'a', 'r', 'i', 'n', 'g']; let i = index;">
+                <span [ngStyle]="{'animation': this.expandedView == true ? 'fade 40s ease-in-out infinite' : '', 'animation-delay': this.expandedView == true ? i+15+'s' : ''}">{{letter}}</span>
+            </div>
+        </div>
+        <div class="word">
+            <div *ngFor="let letter of ['T', 'h', 'i', 'n', 'g', 's']; let i = index;">
+                <span [ngStyle]="{'animation': this.expandedView == true ? 'fade 40s ease-in-out infinite' : '', 'animation-delay': this.expandedView == true ? i+28+'s' : ''}">{{letter}}</span>
+            </div>
+        </div>
     </div>
-     <div class="subtitle">
-        <p><span class= "intro">A 21st century archive of the disappearance of our planet due to the climate crisis.</span><br/> Central to this archive is understanding that the primary causes of climate destruction are imperialism, namely the US military, and overconsumption under capitalism. It is also central to acknowledge that environmentalism cannot be led by those causing the most damage. <span class= "bold">The only way forward is through indigneous led movements.</span> The role of the US in 21st century climate preservation must be paying its climate debt via reparations to indigenous people.</p>
-    </div> 
+    <div class="subHeader main-panel">
+        <p><span class= "intro">A 21st century archive of the forced disappearance of our planet due to the climate crisis.</span><br/><br/> Central to this archive is understanding that the primary causes of climate destruction are imperialism, namely the US military, and overconsumption under capitalism. It is also central to acknowledge that environmentalism cannot be led by those causing the most damage. <span class= "bold">The only way forward is through indigneous led movements.</span> The role of the US in 21st century climate preservation must be paying its climate debt via reparations to indigenous people.</p>
+    </div>
 </header>

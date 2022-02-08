@@ -1,19 +1,20 @@
 <div class = "archive">  
-    <div class="container">
-        <div *ngFor="let entry of entries; let i = index;" [ngClass]="(this.expandedIndex == i) ? 'expanded': 'mini'"  (mouseenter) ="hover(i)" (mouseleave) ="leave()" (click)="expand(i)">     
-            <button> 
-                <img class="grid-media img-responsive" [src]="entry.source" [hidden]="this.expandedIndex == i" alt=""/>
-                <h2 class = "sectionTitle" [hidden]="(this.hoverIndex != i) || (this.expandedIndex == i)" >{{entry.name}}</h2> 
-            </button>
-            <div *ngIf="this.expandedIndex == i; then showExpanded"></div>
+        <div *ngIf="this.expandedIndex != -1; then showExpanded"></div>
             <ng-template #showExpanded>
-                <div class="expandedSection">
-                    <h2>{{entry.name}}</h2>
-                    <p class="shortDesc">{{entry.shortDesc}}</p>
-                    <p>{{entry.longDesc}}</p>
+                <!-- <video autoplay [muted]="'muted'" loop id="bgVideo">
+                    <source src={{this.entries[this.expandedIndex].bg}} type="video/mp4">
+                </video> -->
+                <div class="expandedSection" #expandedEntry>
+                    <h2>{{this.entries[this.expandedIndex].name}}</h2>
+                    <p class="shortDesc">{{this.entries[this.expandedIndex].shortDesc}}</p>
+                    <p>{{this.entries[this.expandedIndex].longDesc}}</p>
                 </div>
             </ng-template>
-        </div>
 
-    </div>
+        <div *ngFor="let entry of entries; let i = index;" [ngClass]="(this.expandedIndex == i) ? 'expanded': 'mini'"  (mouseenter) ="hover(i)" (mouseleave) ="leave()" (click)="expand(i)">     
+            <button> 
+                <h2 [ngClass]="(this.hoverIndex != i) ? 'sectionTitle' : 'hover sectionTitle'" [hidden]="(this.expandedIndex == i)" [ngStyle]="{'animation': (this.hoverIndex != i) ? 'glowBg ' + 2*entries.length + 's ease-in-out infinite, glowText ' + 2*entries.length + 's ease-in-out infinite' : 'none', 'animationDelay': 4*i+'s'}">{{entry.name}}</h2> 
+            </button>
+        </div>
 </div>
+

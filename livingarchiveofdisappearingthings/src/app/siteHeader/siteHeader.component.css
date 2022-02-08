@@ -1,59 +1,61 @@
   
 #siteHeading{
-    width: 100%;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow:  0 0 20px 20px rgba(255, 255, 255, 0.4);
-}
-
-.title{
-    color:black;
-    font-size: 1.75vw;
-    padding: 15% 7.5%;
-    text-align: left;
-    
-}
-.title-container{
-    position: fixed;
-    top: 0;
-    width: 15vw;
+    overflow: hidden;
     background: url("/assets/sky_bg.webp") no-repeat; 
     background-position: center;
     background-size: cover;
-    animation: animatedBackground 30s linear infinite;  
+    animation: animatedClouds 60s linear infinite; 
+    filter: brightness(80%);
+    height: 25vh;
+
 }
 
-.intro{
-    font-size: 1.1em;
-    text-align: center;
-    color: rgb(177, 106, 0);
-    font-weight: 700;
-}
-
-.subtitle{
-    margin: 1% 5vw 1% 17vw;
-    
-    border-radius: 90px;
-    padding: 2% 4%;
-    font-size: 1.25vw;
-    font-weight: 400;
-    top: 100%;
-    color: black;
-}
-
-.bold{
-    font-weight: 900;
-}
-
-@keyframes animatedBackground {
+@keyframes animatedClouds {
 	0% { background-position: 0 0; }
-    45% { background-position: 90% 10%; }
-    50% { background-position: 100% 10%; }
+    45% { background-position: 90% 25%; }
+    50% { background-position: 100% 30%; }
 	95% { background-position: 10% 5%; }
     100% { background-position: 0% 0; }
 }
 
+.word{
+    display: block;
+}
+.word div{
+    display: inline-block;
+}
+.title{
+    font-size: 1.4em;
+    font-weight: 800;
+    padding-left: 2%;
+    padding-top: 1%;
+}
 
+.intro{
+    font-size: 1.2em;
+    color: rgb(28, 32, 87);
+    font-weight: 700;
+}
+
+.subHeader{
+    color: #f1f1f1;
+    height: 100%;
+    vertical-align: top;
+    background: rgba(151, 125, 72, 0.5);
+}
+
+.subHeader p{
+    font-size: .9rem;
+    padding: 2% 3% 1% 2%;
+    text-align: justify;
+}
+
+.bold{
+    font-weight: 900;
+    color: black;
+    mix-blend-mode: overlay;
+}
 @media only screen and (max-device-width: 1366px) {
     .container{
       background-attachment: scroll;

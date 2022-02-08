@@ -1,0 +1,49 @@
+
+.openingMessage {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -60%);
+    border-radius: 30%;
+    color: #e2b98d;
+    width: 80%;
+    padding: 5% 7% 3% 7%;
+    text-align: justify;
+    margin: 0 5%;
+    animation: animatedBackground 30s linear infinite; 
+    mix-blend-mode: luminosity;
+    font-weight: 500;
+  }
+
+  @keyframes animatedBackground {
+	0% { background: rgba(143, 120, 75, 0.4); box-shadow: 0 0 40px 65px rgba(143, 120, 75, 0.4);}
+    25% {background: rgba(160, 126, 75, 0.65); box-shadow: 0 0 30px 35px rgba(160, 126, 75, 0.65);}
+    50% {background: rgba(100, 73, 19, 0.75); box-shadow: 0 0 20px 15px rgba(100, 73, 19, 0.75);}
+	75% {background: rgba(116, 85, 96, 0.65); box-shadow: 0 0 30px 35px rgba(116, 85, 96, 0.65);}
+    100% {background: rgba(143, 120, 75, 0.4); box-shadow: 0 0 40px 65px rgba(143, 120, 75, 0.4);}
+}
+
+.openingMessage > button{
+    margin-top: 1%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.openingMessage>p:nth-child(1){
+    font-size: 1.2rem;
+}
+
+#bgWaves{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(50%);
+    z-index: -100;
+    opacity: .8;
+
+}
+.bold{
+    font-weight: 900;
+    color: #e5eddd;
+}

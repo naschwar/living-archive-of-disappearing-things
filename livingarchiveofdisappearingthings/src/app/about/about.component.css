@@ -1,0 +1,29 @@
+.about{
+    display: inline-block;
+    height: 10%;
+    width: 80%;
+    color: rgb(196, 185, 166);
+}
+
+.subsection{
+    margin: 0 10%;
+    flex: 3; 
+    display: flex;
+    background-color: rgba(56, 101, 143, 0.582);
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.subsection p{
+    padding-left: 2%;
+}
+.about h3{
+    font-size: 1.5rem;
+}
+
+.about > h2{
+    height: 10vh;
+    background: rgba(151, 125, 72, 0.5);
+    font-size: 1.75rem;
+    padding: 2%;
+
+}

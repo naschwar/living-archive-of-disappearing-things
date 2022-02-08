@@ -1,5 +1,15 @@
 <body>
-  <siteHeader></siteHeader>
-  <app-nav></app-nav>
-  <router-outlet></router-outlet>
+  <div *ngIf="this.open==true; then laodt; else entryView"></div>
+  <ng-template #laodt>
+    <div class="laodt">
+      <siteHeader></siteHeader>
+      <div  class= "main-content">
+        <app-nav></app-nav>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #entryView>
+    <app-opening (openToggle)="openArchive()" ></app-opening>
+  </ng-template>
 </body>

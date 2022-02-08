@@ -1,7 +1,6 @@
-import { EntryComponent } from './../entry/entry.component';
-import { Component, OnInit } from '@angular/core';
-import { entries } from '../entry/entry.component';
-
+import { Component, OnInit, Renderer2, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Utils } from '../utils';
+import { DataService } from "../Data.Service";
 
 @Component({
   selector: 'archive',
@@ -9,9 +8,18 @@ import { entries } from '../entry/entry.component';
   styleUrls: ['./archive.component.css']
 })
 export class ArchiveComponent implements OnInit {
-  entries = entries;
+  entries = Utils.entries;
   hoverIndex = -1;
   expandedIndex = -1;
+  @ViewChild('expandedEntry', { static: false }) expandedEntry: ElementRef<HTMLInputElement> = {} as ElementRef;
+  constructor(private renderer: Renderer2, private myService: DataService){
+    window.addEventListener('click',(e:Event)=>{
+      if((this.expandedIndex != -1) && (!this.expandedEntry.nativeElement.contains(e.target as HTMLElement))){
+        this.expandedIndex = -1;
+        this.myService.changeView(false);
+      }
+    }, true);
+  }
   ngOnInit(): void {
   }
 
@@ -32,11 +40,14 @@ export class ArchiveComponent implements OnInit {
   }
 
   expand = (index: number) => {
-    if(this.expandedIndex == index){
-      this.expandedIndex = -1;
-    }else{
-      this.expandedIndex = index;
-    }
+    this.expandedIndex = index;
+    console.log(this.myService)
+    this.myService.changeView(true);
+    console.log(this.myService)
   }
+
+  splitDescription() {
+    return "living".split('\n');
+}
 }
 

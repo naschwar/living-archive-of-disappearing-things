@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'livingarchiveofdisappearingthings';
+  open: boolean = false;
+  openArchive(){
+    this.open = true;
+  }
 }
+

@@ -5,7 +5,6 @@ import { ArchiveComponent } from './archive.component';
 describe('ArchiveComponent', () => {
   let component: ArchiveComponent;
   let fixture: ComponentFixture<ArchiveComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ArchiveComponent ]
